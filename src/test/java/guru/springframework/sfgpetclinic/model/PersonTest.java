@@ -23,7 +23,7 @@ class PersonTest {
         Person person = new Person(1L, "Yasar", "Iftekhar");
         //then
         assertAll("Test Props Set",
-                ()-> assertEquals("Yasar12", person.getFirstName(), "First Name Failed"),
+                ()-> assertEquals("Yasar", person.getFirstName(), "First Name Failed"),
                 ()-> assertEquals("Iftekhar", person.getLastName(), "Last name failed")
         );
     }
