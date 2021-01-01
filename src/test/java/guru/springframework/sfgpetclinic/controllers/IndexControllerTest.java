@@ -9,7 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-@DisplayName("Test for IndexController")
+@Tag("controllers")
+//@DisplayName("Test for IndexController")
 class IndexControllerTest {
 
     IndexController indexController;
