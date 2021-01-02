@@ -1,16 +1,14 @@
 package guru.springframework.sfgpetclinic.model;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.junit.jupiter.api.Tag;
+import guru.springframework.sfgpetclinic.ModelTests;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("model")
-class OwnerTest {
+//@Tag("model") Not needed as we implement the interface
+class OwnerTest implements ModelTests {
 
     @Test
     public void whenPropertiesOfBothOwnerAndPersonAreValid_thenCorrect(){

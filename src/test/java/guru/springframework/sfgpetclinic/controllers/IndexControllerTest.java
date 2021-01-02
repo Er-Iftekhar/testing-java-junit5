@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import guru.springframework.sfgpetclinic.ControllersTests;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
 
@@ -9,9 +10,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-@Tag("controllers")
+//@Tag("controllers") Not needed as we are implementing the interface controller tests
 //@DisplayName("Test for IndexController")
-class IndexControllerTest {
+class IndexControllerTest  implements ControllersTests {
 
     IndexController indexController;
 
