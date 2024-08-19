@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.ValidationException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class IndexControllerTest {
@@ -27,8 +29,8 @@ class IndexControllerTest {
     @Test
     @DisplayName("Test proper exception is thrown")
     void oupsHandler() {
-        assertTrue("notimplemented".equals(controller.oupsHandler()), ()->"This is some expensive"+
-                    "Message to build"+
-                    "for my test");
+        assertThrows(ValidationException.class, ()->{
+            controller.oopsHandler();
+        });
     }
 }
