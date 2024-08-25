@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.*;
 
 import javax.validation.ValidationException;
 
@@ -61,5 +62,53 @@ class IndexControllerTest {
     @Test
     void testAssumptionTrueAssumptionIsTrue(){
         assumeTrue("GURU".equalsIgnoreCase("GURU"));
+    }
+
+    @EnabledOnOs(OS.MAC)
+    @Test
+    void testOnMac(){
+        System.out.println("OS is Mac");
+    }
+
+    @EnabledOnOs(OS.LINUX)
+    @Test
+    void testOnLinux(){
+        System.out.println("OS is Linux");
+    }
+
+    @EnabledOnOs(OS.WINDOWS)
+    @Test
+    void testOnWindows(){
+        System.out.println("OS is Windows");
+    }
+
+    @EnabledOnJre(JRE.JAVA_8)
+    @Test
+    void testOnJava8(){
+
+    }
+
+    @EnabledOnJre(JRE.JAVA_11)
+    @Test
+    void testOnJava11(){
+
+    }
+
+    @EnabledOnJre(JRE.OTHER)
+    @Test
+    void testOnJava17(){
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "iftikhar")
+    @Test
+    void testIfUserMe(){
+
+    }
+
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "yasar")
+    @Test
+    void testIfUserOthers(){
+
     }
 }
