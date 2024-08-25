@@ -10,6 +10,7 @@ import javax.validation.ValidationException;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class IndexControllerTest {
 
@@ -50,5 +51,15 @@ class IndexControllerTest {
         assertTimeoutPreemptively(Duration.ofMillis(100), ()->{
             Thread.sleep(5000);
         });
+    }
+
+    @Test
+    void testAssumptionTrue(){
+        assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
+    }
+
+    @Test
+    void testAssumptionTrueAssumptionIsTrue(){
+        assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 }
