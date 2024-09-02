@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -35,5 +36,12 @@ class OwnerTest implements ModelTests {
     @ValueSource(strings = {"Spring", "Framework", "Guru"})
     void testValueSource(String val){
         System.out.println(val);
+    }
+
+    @DisplayName("Value source test")
+    @ParameterizedTest(name = "{displayName} - {index}: {arguments}")
+    @EnumSource(OwnerType.class)
+    void enumTests(OwnerType ownerType){
+        System.out.println(ownerType);
     }
 }
